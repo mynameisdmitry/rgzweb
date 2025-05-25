@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Игуменшев Дмитрий Евгеньевич. ТНС энерго Марий Эл - О компании</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png" type="image/x-icon">
+<style>
+        .center-img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(8, 7, 7, 0.89);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3 {
+            color: #027c43;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 28px;
+        }
+        h2 {
+            font-size: 22px;
+            margin-top: 30px;
+        }
+        .fixed-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 12px 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            background-color: #006837;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(7, 7, 7, 0.2);
+            z-index: 100;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .fixed-button:hover {
+            background-color: #008a49;
+            transform: translateY(-3px);
+        }
+        p, li {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .highlight {
+            background-color: #e9f1ea;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #006837;
+        }
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            cursor: pointer;
+            font-size: 24px;
+            color: #006837;
+            background: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(3, 3, 3, 0.1);
+        }
+        .menu-panel {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 10px rgba(5, 5, 5, 0.1);
+            z-index: 1000;
+            transition: left 0.3s ease;
+            padding-top: 70px;
+        }
+        .menu-panel.active {
+            left: 0;
+        }
+        .menu-panel a {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            font-weight: 600;
+            font-family: 'Open Sans', sans-serif;
+            transition: all 0.3s;
+        }
+        .menu-panel a:hover {
+            background-color: #e8f5e9;
+            color: #006837;
+        }
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(7, 7, 7, 0.5);
+            z-index: 999;
+            display: none;
+        }
+        a {
+            color: #006837;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #008a49;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .site-header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(7, 7, 7, 0.1);
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .header-logo {
+            height: 70px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="menu-btn">☰</div>
+<div class="menu-panel">
+    <a href="index.html">О компании</a>
+    <a href="news.html">Новости</a>
+    <a href="course.html">Курс валют</a>
+    <a href="contacts.html">Контакты</a>
+    <a href="video.html">Видео</a>
+</div>
+<div class="menu-overlay"></div>
+
+<header class="site-header">
+    <img src="tns1.jpg" alt="Логотип ТНС энерго Марий Эл" class="header-logo">
+</header>
+
+<div class="container">
+    <a id="top"></a>
+
+    <h1><u>О компании ТНС энерго Марий Эл</u></h1>
+
+    <div class="highlight">
+        <p><strong>ТНС энерго Марий Эл</strong> — <i>ведущий российский оператор фискальных данных</i>, 
+            предоставляющий аналитические решения для бизнеса и государственных органов на основе данных о потребительском поведении.</p>
+    </div>
+
+    <h2><i>Направления деятельности</i></h2>
+    <p>Компания специализируется на следующих направлениях:</p>
+    <ul>
+        <li><p><strong>Розничные измерения</strong> - мониторинг продаж товаров FMCG</p></li>
+        <li><p><strong>Медиаизмерения</strong> - анализ телесмотрения и интернет-активности</p></li>
+        <li><p><strong>Аналитика больших данных</strong> для бизнеса</p></li>
+        <li><p><strong>Социологические исследования</strong> и маркетинговые исследования</p></li>
+    </ul>
+    
+    <img src="tns2.jpg" alt="Офис ТНС энерго Марий Эл" class="center-img" width="800">
+    
+    <h2>История компании</h2>
+    <p><u>Год создания:</u> <strong>1992</strong></p>
+    <p>Компания ТНС энерго Марий Эл была основана в <strong>1992 году</strong> как представительство международной исследовательской группы Taylor Nelson Sofres в России.</p>
+    <p>В <strong>2008 году</strong> произошло слияние с компанией Kantar Group, что значительно расширило исследовательские возможности компании.</p>
+    <p>В <strong>2016 году</strong> ТНС энерго Марий Эл вошла в состав международной группы Kantar, одного из мировых лидеров в области маркетинговых исследований и консалтинга.</p>
+    
+    <img src="tns4.jpeg" alt="Команда ТНС энерго Марий Эл" class="center-img" width="600">
+    
+    <h2>Наши принципы</h2>
+    <p>Основные принципы работы компании:</p>
+    <ol>
+        <li><p><u>Достоверность данных</u> - мы обеспечиваем высочайшую точность и надежность информации</p></li>
+        <li><p><u>Конфиденциальность</u> - строгое соблюдение принципов защиты персональных данных</p></li>
+        <li><p><u>Инновации</u> - постоянное развитие методологий и технологий сбора и анализа данных</p></li>
+    </ol>
+    
+    <h2>Технологии</h2>
+    <p>ТНС энерго Марий Эл использует передовые технологии для сбора и анализа данных:</p>
+    <ul>
+        <li><p><b>Панельные исследования</b> с участием более 10 000 домохозяйств</p></li>
+        <li><p><b>Сканирование штрих-кодов</b> в розничных точках</p></li>
+        <li><p><b>Цифровые технологии</b> измерения аудитории</p></li>
+        <li><p><b>Искусственный интеллект</b> для прогнозной аналитики</p></li>
+    </ul>
+    
+    <img src="tns3.jpg" alt="Технологии ТНС энерго Марий Эл" class="center-img">
+    
+    <h2>Достижения</h2>
+    <p>Ключевые достижения компании:</p>
+    <ul>
+        <li><p><strong>Лидер</strong> рынка маркетинговых исследований в России</p></li>
+        <li><p><strong>Охват</strong> более 85% розничного рынка FMCG</p></li>
+        <li><p><strong>Эксклюзивные методологии</strong> анализа потребительского поведения</p></li>
+    </ul>
+    
+    <p>Сегодня <strong>ТНС Россия</strong> - это <i>более 500 сотрудников</i>, <i>представительства</i> в 15 городах России, 
+        и <i>партнерские отношения</i> с <b>более чем 200 компаниями</b> в различных отраслях.</p>
+    
+</div>
+
+<footer>
+    <div class="copyright">
+        © 2023 ТНС энерго Марий Эл. Все права защищены.<br>
+        424002, Республика Марий Эл, г. Йошкар-Ола, ул. Первомайская, д. 109<br>
+        Телефон контакт-центра: 8-800-250-25-25 (бесплатно)<br>
+        Электронная почта: office@mari-el.tns-e.ru<br>
+        Режим работы: Пн-Чт с 8:00 до 17:00, Пт с 8:00 до 16:00, перерыв с 12:00 до 13:00<br>
+        Подробнее на официальном сайте: <a href="https://mari-el.tns-e.ru/population/" target="_blank">tns-e.ru</a>
+    </div>
+</footer>
+
+<a href="#top" class="fixed-button">↑</a>
+
+<script>
+    document.querySelector('.menu-btn').addEventListener('click', function() {
+        document.querySelector('.menu-panel').classList.toggle('active');
+        document.querySelector('.menu-overlay').style.display = 'block';
+    });
+    
+    document.querySelector('.menu-overlay').addEventListener('click', function() {
+        document.querySelector('.menu-panel').classList.remove('active');
+        this.style.display = 'none';
+    });
+</script>
+
+</body>
+</html>
