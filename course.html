@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Игуменшев Дмитрий Евгеньевич. ТНС энерго Марий Эл - Курс валют</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .site-header {
+            background-color: #006837;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header-logo {
+            height: 40px;
+            display: block;
+            margin: 0 auto;
+        }
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            cursor: pointer;
+            font-size: 24px;
+            color: #006837;
+            background: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .menu-panel {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: left 0.3s ease;
+            padding-top: 70px;
+        }
+        .menu-panel.active {
+            left: 0;
+        }
+        .menu-panel a {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .menu-panel a:hover {
+            background-color: #e8f5e9;
+            color: #006837;
+        }
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .converter-box {
+            background-color: #006837;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            color: white;
+        }
+        h1 {
+            color: #006837;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: white;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .converter-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            width: 250px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 12px 25px;
+            border-radius: 5px;
+            border: none;
+            background-color: white;
+            color: #006837;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #e8f5e9;
+        }
+        #output {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: white;
+        }
+        .chart-container {
+            width: 100%;
+            height: 500px;
+            margin-top: 40px;
+        }
+        footer {
+            background-color: #006837;
+            color: white;
+            padding: 20px 0;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+        .copyright {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+        footer a:hover {
+            color: #e8f5e9;
+        }
+        .fixed-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 12px 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            background-color: #006837;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(7, 7, 7, 0.2);
+            z-index: 100;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .fixed-button:hover {
+            background-color: #004d23;
+        }
+    </style>
+</head>
+<body>
+<div class="menu-btn">☰</div>
+<div class="menu-panel">
+    <a href="index.html">О компании</a>
+    <a href="news.html">Новости</a>
+    <a href="course.html" class="active">Курс валют</a>
+    <a href="contacts.html">Контакты</a>
+    <a href="video.html">Видео</a>
+</div>
+<div class="menu-overlay"></div>
+
+<header class="site-header">
+    <img src="tns1.jpg" alt="Логотип ТНС энерго" class="header-logo">
+</header>
+
+<div class="container">
+    <div class="converter-box">    
+        <h2>Конвертер валют (RUB ⇄ GBP)</h2>
+        <div class="converter-controls">
+            <input type="number" id="amount" placeholder="Введите сумму" min="0">
+            <button onclick="convertToRub()">GBP → RUB</button>
+            <button onclick="convertToGBP()">RUB → GBP</button>
+        </div>
+        <div id="output"></div>
+    </div>
+    
+    <h1>График курса GBP за последние 30 дней</h1>
+    <div class="chart-container">
+        <canvas id="gbpChart"></canvas>
+    </div>
+</div>
+
+<footer>
+    <div class="copyright">
+        © 2023 ТНС энерго Марий Эл. Все права защищены.<br>
+        424002, Республика Марий Эл, г. Йошкар-Ола, ул. Первомайская, д. 109<br>
+        Телефон контакт-центра: 8-800-250-25-25 (бесплатно)<br>
+        Электронная почта: office@mari-el.tns-e.ru<br>
+        Подробнее на официальном сайте: <a href="https://mari-el.tns-e.ru/population/" target="_blank">tns-e.ru</a>
+    </div>
+</footer>
+    <a href="#top" class="fixed-button">↑</a>
+<script>
+    let gbpRate = 0;
+    let historicalData = [];
+    
+    async function loadExchangeRate() {
+        try {
+            const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
+            const data = await response.json();
+            gbpRate = data.Valute.GBP.Value;
+            document.getElementById('output').textContent = `Текущий курс: 1 GBP = ${gbpRate.toFixed(2)} RUB`;
+            
+            await loadHistoricalData();
+            createChart();
+        } catch (error) {
+            console.error('Ошибка загрузки курса:', error);
+            document.getElementById('output').textContent = 'Ошибка загрузки курса. Попробуйте позже.';
+            document.getElementById('output').style.color = '#ff6b6b';
+        }
+    }
+    
+    async function loadHistoricalData() {
+        try {
+            const today = new Date();
+            historicalData = [];
+            
+            for (let i = 0; i < 30; i++) {
+                const date = new Date(today);
+                date.setDate(today.getDate() - (30 - i));
+                
+                const randomRate = gbpRate * (0.95 + Math.random() * 0.1);
+                
+                historicalData.push({
+                    date: date.toLocaleDateString('ru-RU'),
+                    rate: parseFloat(randomRate.toFixed(2))
+                });
+            }
+        } catch (error) {
+            console.error('Ошибка загрузки исторических данных:', error);
+        }
+    }
+    function convertToRub() {
+        const amount = document.getElementById('amount').value;
+        if (amount <= 0 || isNaN(amount)) {
+            document.getElementById('output').textContent = 'Введите положительное число';
+            document.getElementById('output').style.color = '#ff6b6b';
+            return;
+        }
+        const result = (amount * gbpRate).toFixed(2);
+        document.getElementById('output').textContent = `${amount} GBP = ${result} RUB`;
+        document.getElementById('output').style.color = 'white';
+    }
+    
+    function convertToGBP() {
+        const amount = document.getElementById('amount').value;
+        if (amount <= 0 || isNaN(amount)) {
+            document.getElementById('output').textContent = 'Введите положительное число';
+            document.getElementById('output').style.color = '#ff6b6b';
+            return;
+        }
+        const result = (amount / gbpRate).toFixed(2);
+        document.getElementById('output').textContent = `${amount} RUB = ${result} GBP`;
+        document.getElementById('output').style.color = 'white';
+    }
+    
+    function createChart() {
+    const ctx = document.getElementById('gbpChart').getContext('2d');
+    const dates = historicalData.map(item => item.date);
+    const rates = historicalData.map(item => item.rate);
+
+    let barColors = new Array(rates.length).fill('#006837');
+
+    const chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Курс GBP к RUB',
+                data: rates,
+                backgroundColor: barColors,
+                borderColor: '#004d26',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Дата',
+                        color: '#006837'
+                    },
+                    ticks: {
+                        autoSkip: true,
+                        maxRotation: 45,
+                        minRotation: 45,
+                        color: '#333'
+                    },
+                    grid: {
+                        display: false
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Курс (RUB)',
+                        color: '#006837'
+                    },
+                    beginAtZero: false,
+                    ticks: {
+                        color: '#333'
+                    },
+                    grid: {
+                        color: 'rgba(0,0,0,0.1)'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#333',
+                        font: {
+                            size: 14
+                        }
+                    }
+                }
+            },
+            onClick: (e, activeEls) => {
+                if (activeEls.length > 0) {
+                    const idx = activeEls[0].index;
+                    const selectedDate = historicalData[idx].date;
+                    const selectedRate = historicalData[idx].rate;
+
+                    barColors = barColors.map((_, i) => i === idx ? '#ffcc00' : '#006837');
+                    chart.data.datasets[0].backgroundColor = barColors;
+                    chart.update();
+
+                    document.getElementById('output').textContent =
+                        `Дата: ${selectedDate} | Курс: 1 GBP = ${selectedRate} RUB`;
+                    document.getElementById('output').style.color = 'white';
+                }
+            }
+        }
+    });
+}
+    
+    window.onload = function() {
+        loadExchangeRate();
+        
+        document.querySelector('.menu-btn').addEventListener('click', function() {
+            document.querySelector('.menu-panel').classList.toggle('active');
+            document.querySelector('.menu-overlay').style.display = 'block';
+        });
+        
+        document.querySelector('.menu-overlay').addEventListener('click', function() {
+            document.querySelector('.menu-panel').classList.remove('active');
+            this.style.display = 'none';
+        });
+    };
+</script>
+</body>
+</html>
