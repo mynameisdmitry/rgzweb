@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Игуменшев Дмитрий Евгеньевич. ТНС энерго Марий Эл - Контакты</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .site-header {
+            background-color: #006837;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header-logo {
+            height: 40px;
+            display: block;
+            margin: 0 auto;
+        }
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            cursor: pointer;
+            font-size: 24px;
+            color: #006837;
+            background: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .menu-panel {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: left 0.3s ease;
+            padding-top: 70px;
+        }
+        .menu-panel.active {
+            left: 0;
+        }
+        .menu-panel a {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .menu-panel a:hover {
+            background-color: #e8f5e9;
+            color: #006837;
+        }
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+        }
+        .contact-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            color: #006837;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        h2 {
+            color: #006837;
+            margin-top: 40px;
+            border-bottom: 2px solid #006837;
+            padding-bottom: 10px;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .contact-info {
+            background-color: #e8f5e9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .contact-item {
+            margin-bottom: 20px;
+        }
+        .contact-item h3 {
+            color: #006837;
+            margin-bottom: 5px;
+        }
+        .contact-item p, .contact-item a {
+            margin: 5px 0;
+            color: #333;
+        }
+        .contact-item a {
+            color: #006837;
+            text-decoration: none;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        .map-container {
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        footer {
+            background-color: #006837;
+            color: white;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+        .copyright {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+        footer a:hover {
+            color: #e8f5e9;
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .map-container {
+                height: 400px;
+            }
+        }
+        
+        /* Исправленные стили для кнопки "Наверх" */
+        .fixed-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            border-radius: 50%;
+            text-decoration: none;
+            background-color: #006837;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .fixed-button:hover {
+            background-color: #004d23;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+<div class="menu-btn">☰</div>
+<div class="menu-panel">
+    <a href="index.html">О компании</a>
+    <a href="news.html">Новости</a>
+    <a href="course.html">Курс валют</a>
+    <a href="contacts.html" class="active">Контакты</a>
+    <a href="video.html">Видео</a>
+</div>
+<div class="menu-overlay"></div>
+
+<header class="site-header">
+    <img src="tns1.jpg" alt="Логотип ТНС энерго" class="header-logo">
+</header>
+
+<main class="contact-container">
+    <a id="top"></a>
+    <h1>Контактные данные ТНС энерго Марий Эл</h1>
+    
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h2>Основные контакты</h2>
+            
+            <div class="contact-item">
+                <h3>Адрес</h3>
+                <p>424002, Республика Марий Эл, г. Йошкар-Ола, ул. Первомайская, д. 109</p>
+            </div>
+            
+            <div class="contact-item">
+                <h3>Контактный центр</h3>
+                <p>8-800-250-25-25 (бесплатно)</p>
+                <p>+7 (8362) 45-00-00</p>
+            </div>
+            
+            <div class="contact-item">
+                <h3>Электронная почта</h3>
+                <p><a href="mailto:office@mari-el.tns-e.ru">office@mari-el.tns-e.ru</a></p>
+            </div>
+            
+            <div class="contact-item">
+                <h3>Режим работы</h3>
+                <p>Пн-Чт: 8:00 - 17:00</p>
+                <p>Пт: 8:00 - 16:00</p>
+                <p>Перерыв: 12:00 - 13:00</p>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <h2>Отделы компании</h2>
+            
+            <div class="contact-item">
+                <h3>Абонентский отдел</h3>
+                <p>+7 (8362) 45-01-01</p>
+                <p><a href="mailto:clients@mari-el.tns-e.ru">clients@mari-el.tns-e.ru</a></p>
+            </div>
+            
+            <div class="contact-item">
+                <h3>Техническая поддержка</h3>
+                <p>+7 (8362) 45-02-02</p>
+                <p><a href="mailto:support@mari-el.tns-e.ru">support@mari-el.tns-e.ru</a></p>
+            </div>
+            
+            <div class="contact-item">
+                <h3>Пресс-служба</h3>
+                <p>+7 (8362) 45-03-03</p>
+                <p><a href="mailto:press@mari-el.tns-e.ru">press@mari-el.tns-e.ru</a></p>
+            </div>
+            
+            <div class="contact-item">
+                <h3>Сотрудничество</h3>
+                <p>+7 (8362) 45-04-04</p>
+                <p><a href="mailto:partners@mari-el.tns-e.ru">partners@mari-el.tns-e.ru</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <h2>Как нас найти</h2>
+    <div class="map-container">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=47.888801%2C56.638620&z=17&pt=47.888801,56.638620,pm2rdm" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+    <h2>Реквизиты компании</h2>
+    <div class="contact-info">
+        <div class="contact-item">
+            <h3>Полное наименование</h3>
+            <p>АО "ТНС энерго Марий Эл"</p>
+        </div>
+        <div class="contact-item">
+            <h3>ИНН / КПП</h3>
+            <p>1234567890 / 123456789</p>
+        </div>
+        <div class="contact-item">
+            <h3>ОГРН</h3>
+            <p>1123456789000</p>
+        </div>
+        <div class="contact-item">
+            <h3>Банковские реквизиты</h3>
+            <p>ПАО "Сбербанк"</p>
+            <p>р/с 40702810000000000001</p>
+            <p>к/с 30101810000000000222</p>
+            <p>БИК 044525222</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="copyright">
+        © 2023 ТНС энерго Марий Эл. Все права защищены.<br>
+        424002, Республика Марий Эл, г. Йошкар-Ола, ул. Первомайская, д. 109<br>
+        Телефон контакт-центра: 8-800-250-25-25 (бесплатно)<br>
+        Подробнее на официальном сайте: <a href="https://mari-el.tns-e.ru/population/" target="_blank">tns-e.ru</a>
+    </div>
+</footer>
+
+<a href="#top" class="fixed-button">↑</a>
+
+<script>
+    document.querySelector('.menu-btn').addEventListener('click', function() {
+        document.querySelector('.menu-panel').classList.toggle('active');
+        document.querySelector('.menu-overlay').style.display = 'block';
+    });
+    
+    document.querySelector('.menu-overlay').addEventListener('click', function() {
+        document.querySelector('.menu-panel').classList.remove('active');
+        this.style.display = 'none';
+    });
+</script>
+</body>
+</html>
