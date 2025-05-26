@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Игуменшев Дмитрий Евгеньевич. ТНС энерго Марий Эл - Новости</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .site-header {
+            background-color: #006837;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header-logo {
+            height: 40px;
+            display: block;
+            margin: 0 auto;
+        }
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            cursor: pointer;
+            font-size: 24px;
+            color: #006837;
+            background: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .menu-panel {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: left 0.3s ease;
+            padding-top: 70px;
+        }
+        .menu-panel.active {
+            left: 0;
+        }
+        .menu-panel a {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .menu-panel a:hover {
+            background-color: #e8f5e9;
+            color: #006837;
+        }
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+        }
+        .news-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            color: #006837;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        .news-card {
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #006837;
+        }
+        .news-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .news-title {
+            color: #006837;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .news-short {
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .news-full-text {
+            display: none;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            margin-top: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .show-button {
+            background-color: #006837;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        .show-button:hover {
+            background-color: #008a49;
+        }
+        footer {
+            background-color: #006837;
+            color: white;
+            padding: 20px 0;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+        .copyright {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+        footer a:hover {
+            color: #e8f5e9;
+        }
+    </style>
+</head>
+<body>
+<div class="menu-btn">☰</div>
+<div class="menu-panel">
+    <a href="index.html">О компании</a>
+    <a href="news.html" class="active">Новости</a>
+    <a href="course.html">Курс валют</a>
+    <a href="contacts.html">Контакты</a>
+    <a href="video.html">Видео</a>
+</div>
+<div class="menu-overlay"></div>
+
+<header class="site-header">
+    <img src="tns1.jpg" alt="Логотип ТНС энерго" class="header-logo">
+</header>
+
+<main class="news-container">
+    <h1>Новости ТНС энерго Марий Эл</h1>
+    
+    <div class="news-card">
+        <p class="news-date">15.05.2025</p>
+        <h2 class="news-title">ТНС энерго Марий Эл модернизирует систему расчетов</h2>
+        <p class="news-short">Компания внедряет новую систему онлайн-расчетов, которая позволит клиентам быстрее и удобнее оплачивать услуги. Теперь платежи будут обрабатываться в течение 15 минут.</p>
+        <button class="show-button" onclick="toggleText(this)">Подробнее</button>
+        <p class="news-full-text">
+            ТНС энерго Марий Эл завершила первый этап модернизации системы расчетов. Новый программный комплекс позволяет сократить время обработки платежей с нескольких часов до 15 минут. Особое внимание уделено безопасности транзакций - внедрена двухфакторная аутентификация и система мониторинга подозрительных операций. "Мы стремимся сделать процесс оплаты максимально простым и безопасным для наших клиентов", - отметил директор компании. В ближайших планах - интеграция с популярными платежными системами и банковскими приложениями.
+        </p>
+    </div>
+
+    <div class="news-card">
+        <p class="news-date">10.05.2025</p>
+        <h2 class="news-title">Новые тарифы на электроэнергию для населения</h2>
+        <p class="news-short">С 1 июня 2025 года вступают в силу новые тарифы на электроэнергию, утвержденные Региональной энергетической комиссией Республики Марий Эл.</p>
+        <button class="show-button" onclick="toggleText(this)">Подробнее</button>
+        <p class="news-full-text">
+            Согласно решению Региональной энергетической комиссии, средний рост тарифов для населения составит 3,5%. Для льготных категорий граждан сохраняются специальные условия. ТНС энерго Марий Эл подготовила разъяснительную кампанию для клиентов - на сайте компании доступен тарифный калькулятор, а в офисах работают консультанты. "Мы понимаем, что изменение тарифов всегда вызывает вопросы, поэтому стараемся максимально подробно информировать наших клиентов", - отметила руководитель клиентской службы.
+        </p>
+    </div>
+
+    <div class="news-card">
+        <p class="news-date">05.05.2025</p>
+        <h2 class="news-title">ТНС энерго Марий Эл получила награду за качество обслуживания</h2>
+        <p class="news-short">Компания признана лучшим гарантирующим поставщиком электроэнергии в Приволжском федеральном округе по итогам независимого исследования.</p>
+        <button class="show-button" onclick="toggleText(this)">Подробнее</button>
+        <p class="news-full-text">
+            По результатам ежегодного исследования качества услуг в сфере ЖКХ, проведенного Национальным агентством потребительских исследований, ТНС энерго Марий Эл заняла первое место среди гарантирующих поставщиков электроэнергии ПФО. Оценка проводилась по таким критериям, как доступность информации, скорость решения проблем, удобство платежных сервисов и качество работы call-центра. "Эта награда - результат системной работы всего коллектива компании по улучшению клиентского сервиса", - заявил генеральный директор компании на церемонии награждения.
+        </p>
+    </div>
+
+    <div class="news-card">
+        <p class="news-date">28.04.2025</p>
+        <h2 class="news-title">Энергосберегающие технологии для жителей Марий Эл</h2>
+        <p class="news-short">ТНС энерго Марий Эл запускает программу по популяризации энергосберегающих технологий среди населения республики.</p>
+        <button class="show-button" onclick="toggleText(this)">Подробнее</button>
+        <p class="news-full-text">
+            В рамках новой программы ТНС энерго Марий Эл организует серию бесплатных семинаров по энергосбережению для жителей республики. Специалисты компании расскажут о современных способах снижения потребления электроэнергии, преимуществах энергоэффективных приборов и методах учета электроэнергии. Первые семинары пройдут в Йошкар-Оле, Волжске и Козьмодемьянске. "Наша цель - не только поставлять электроэнергию, но и помогать клиентам использовать ее рационально", - отметил руководитель проекта. Для участников семинаров подготовлены информационные материалы и памятки.
+        </p>
+    </div>
+
+    <div class="news-card">
+        <p class="news-date">20.04.2025</p>
+        <h2 class="news-title">Модернизация оборудования в Йошкар-Оле</h2>
+        <p class="news-short">ТНС энерго Марий Эл завершила первый этап модернизации трансформаторных подстанций в столице республики.</p>
+        <button class="show-button" onclick="toggleText(this)">Подробнее</button>
+        <p class="news-full-text">
+            В рамках инвестиционной программы ТНС энерго Марий Эл заменила 15 трансформаторов в Йошкар-Оле. Новое оборудование отличается повышенной надежностью и энергоэффективностью. "Модернизация позволит снизить потери электроэнергии и повысить качество электроснабжения потребителей", - пояснил технический директор компании. Все работы проводились без отключения потребителей. До конца года планируется заменить еще 25 трансформаторов в различных районах города. Общий объем инвестиций в модернизацию сетей в 2025 году составит более 150 млн рублей.
+        </p>
+    </div>
+
+    <div class="news-card">
+        <p class="news-date">12.04.2025</p>
+        <h2 class="news-title">ТНС энерго Марий Эл расширяет возможности личного кабинета</h2>
+        <p class="news-short">В личном кабинете на сайте компании теперь доступна новая функция - "Энергопотребление в динамике".</p>
+        <button class="show-button" onclick="toggleText(this)">Подробнее</button>
+        <p class="news-full-text">
+            ТНС энерго Марий Эл продолжает развивать цифровые сервисы для клиентов. Новая функция личного кабинета позволяет увидеть график потребления электроэнергии за последние 12 месяцев с разбивкой по месяцам. Это поможет потребителям анализировать свои расходы и выявлять сезонные колебания. "Мы стремимся сделать взаимодействие с клиентами максимально прозрачным и удобным", - отметил руководитель IT-департамента компании. В ближайших планах - добавление возможности сравнения потребления с аналогичными периодами прошлых лет и рекомендаций по энергосбережению.
+        </p>
+    </div>
+
+    <div class="news-card">
+        <p class="news-date">05.04.2025</p>
+        <h2 class="news-title">Социальная поддержка от ТНС энерго Марий Эл</h2>
+        <p class="news-short">Компания продлевает действие специальных тарифов для социально незащищенных категорий граждан.</p>
+        <button class="show-button" onclick="toggleText(this)">Подробнее</button>
+        <p class="news-full-text">
+            ТНС энерго Марий Эл продлила действие льготных условий для пенсионеров, многодетных семей и инвалидов. В рамках социальной программы такие клиенты могут получить рассрочку платежа или индивидуальный график оплаты. "Мы понимаем, что некоторые категории граждан нуждаются в особой поддержке, и стараемся идти им навстречу", - заявила руководитель клиентской службы компании. Для оформления льгот необходимо предоставить соответствующие документы в любой клиентский офис ТНС энерго Марий Эл. Консультации по вопросам социальной поддержки можно получить по телефону горячей линии 8-800-250-25-25.
+        </p>
+    </div>
+
+    <div class="news-card">
+        <p class="news-date">28.03.2025</p>
+        <h2 class="news-title">ТНС энерго Марий Эл улучшает экологическую политику</h2>
+        <p class="news-short">Компания переходит на электронный документооборот, что позволит сократить использование бумаги на 85%.</p>
+        <button class="show-button" onclick="toggleText(this)">Подробнее</button>
+        <p class="news-full-text">
+            В рамках экологической стратегии ТНС энерго Марий Эл полностью переходит на электронные квитанции и документооборот. Это позволит ежегодно экономить более 5 тонн бумаги. "Мы не только поставляем электроэнергию, но и сами стремимся использовать современные энергоэффективные технологии", - отметил директор по развитию компании. Клиенты, перешедшие на электронные квитанции, получают ежемесячные бонусы в виде скидки 1% на оплату услуг. Для подключения услуги достаточно оставить заявку в личном кабинете или клиентском офисе.
+        </p>
+    </div>
+
+    <div class="news-card">
+        <p class="news-date">15.03.2025</p>
+        <h2 class="news-title">Новые офисы обслуживания в районах республики</h2>
+        <p class="news-short">ТНС энерго Марий Эл открывает три новых клиентских офиса в отдаленных районах Марий Эл.</p>
+        <button class="show-button" onclick="toggleText(this)">Подробнее</button>
+        <p class="news-full-text">
+            Для удобства жителей отдаленных районов ТНС энерго Марий Эл открывает новые офисы в поселках Советский, Морки и Сернур. Офисы будут предоставлять полный спектр услуг: прием платежей, консультации по тарифам, оформление документов. "Мы стремимся сделать наши услуги максимально доступными для всех жителей республики", - подчеркнул руководитель сети клиентских офисов. В новых офисах будут работать местные жители, прошедшие специальное обучение. График работы: с понедельника по пятницу с 8:00 до 17:00, в субботу с 9:00 до 14:00.
+        </p>
+    </div>
+
+    <div class="news-card">
+        <p class="news-date">01.03.2025</p>
+        <h2 class="news-title">ТНС энерго Марий Эл участвует в программе "Умный город"</h2>
+        <p class="news-short">Компания стала технологическим партнером проекта "Умный город" в Йошкар-Оле.</p>
+        <button class="show-button" onclick="toggleText(this)">Подробнее</button>
+        <p class="news-full-text">
+            ТНС энерго Марий Эл присоединилась к реализации федерального проекта "Умный город" в столице республики. Компания обеспечит установку "умных" счетчиков электроэнергии в пилотных районах города. Новые устройства позволяют дистанционно снимать показания и оперативно выявлять проблемы в сети. "Это важный шаг в цифровизации городского хозяйства", - отметил представитель компании. В рамках проекта также планируется внедрение системы интеллектуального уличного освещения, которая позволит экономить до 30% электроэнергии. Первые "умные" счетчики появятся у жителей уже в июне 2025 года.
+        </p>
+    </div>
+</main>
+
+<footer>
+    <div class="copyright">
+        © 2023 ТНС энерго Марий Эл. Все права защищены.<br>
+        424002, Республика Марий Эл, г. Йошкар-Ола, ул. Первомайская, д. 109<br>
+        Телефон контакт-центра: 8-800-250-25-25 (бесплатно)<br>
+        Электронная почта: office@mari-el.tns-e.ru<br>
+        Подробнее на официальном сайте: <a href="https://mari-el.tns-e.ru/population/" target="_blank">tns-e.ru</a>
+    </div>
+</footer>
+
+<script>
+    function toggleText(button) {
+        const text = button.nextElementSibling;
+        if (text.style.display === "block") {
+            text.style.display = "none";
+            button.textContent = "Подробнее";
+        } else {
+            text.style.display = "block";
+            button.textContent = "Свернуть";
+        }
+    }
+
+    document.querySelector('.menu-btn').addEventListener('click', function() {
+        document.querySelector('.menu-panel').classList.toggle('active');
+        document.querySelector('.menu-overlay').style.display = 'block';
+    });
+    
+    document.querySelector('.menu-overlay').addEventListener('click', function() {
+        document.querySelector('.menu-panel').classList.remove('active');
+        this.style.display = 'none';
+    });
+</script>
+</body>
+</html>
